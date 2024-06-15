@@ -8,6 +8,7 @@ const path = require('path')
 app.use(cors());
 app.use(exp.json())
 
+
 mc.connect(process.env.DB_URL)
 .then(client=>{
     const alumnidb = client.db('alumniconnect')

@@ -32,10 +32,10 @@ function Register() {
         console.log(user)
         let res;
         if(user.userType==='student'){
-         res = await axios.post('http://localhost:4000/student-api/student',user)
+         res = await axios.post('https://alumni-connect-sigma.vercel.app/student-api/student',user)
     }
     else{
-         res = await axios.post('http://localhost:4000/alumni-api/alumni',user)
+         res = await axios.post('https://alumni-connect-sigma.vercel.app/alumni-api/alumni',user)
     }
         console.log(res.data)
         if(res.data.message==='User created' || res.data.message==='Alumni Registered'){

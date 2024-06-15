@@ -23,10 +23,10 @@ function MainEvent() {
         commentObj.username = currentUser.username;
         let res;
         if(currentUser.userType==='student'){
-            res = await axiosWithToken.post(`http://localhost:4000/student-api/event/comment/${state.eventId}`,commentObj);
+            res = await axiosWithToken.post(`https://alumni-connect-sigma.vercel.app/student-api/event/comment/${state.eventId}`,commentObj);
 }
         else{
-        res = await axiosWithToken.post(`http://localhost:4000/alumni-api/event/comment/${state.eventId}`,commentObj);
+        res = await axiosWithToken.post(`https://alumni-connect-sigma.vercel.app/alumni-api/event/comment/${state.eventId}`,commentObj);
 }
         if(res.data.message==='Comment Posted'){
             setComment(res.data.message);

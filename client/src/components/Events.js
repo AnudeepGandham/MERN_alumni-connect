@@ -10,7 +10,7 @@ function Events() {
         headers:{Authorization: `Bearer ${token}`}
     }) 
     const getArt= async ()=>{
-        let res = await axiosWithToken.get(`http://localhost:4000/student-api/events`);
+        let res = await axiosWithToken.get(`https://alumni-connect-sigma.vercel.app/student-api/events`);
         setEvents(res.data.payload)
         console.log(events)
     }

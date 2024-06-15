@@ -24,7 +24,7 @@ function AddEvent() {
     diss.comments = [];
     diss.status = true;
   //  //make HTTP post req
-   let res=await axiosWithToken.post('http://localhost:4000/alumni-api/eventa',diss)
+   let res=await axiosWithToken.post('https://alumni-connect-sigma.vercel.app/alumni-api/eventa',diss)
    console.log(res)
    if(res.data.message==='New event created'){
     if(currentUser.userType==='student')

@@ -12,7 +12,7 @@ function MyEvents() {
     }) 
 
     const getArt= async ()=>{
-        let res = await axiosWithToken.get(`http://localhost:4000/alumni-api/eventa/user-event/${currentUser.username}`);
+        let res = await axiosWithToken.get(`https://alumni-connect-sigma.vercel.app/alumni-api/eventa/user-event/${currentUser.username}`);
         setMyEvents(res.data.payload)
         console.log(myEvents)
     }

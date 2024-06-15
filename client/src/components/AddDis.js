@@ -27,10 +27,10 @@ function AddDis() {
     //  //make HTTP post req
     let res;
     if(currentUser.userType==='student'){
-     res=await axiosWithToken.post('http://localhost:4000/student-api/new-discussion',diss)
+     res=await axiosWithToken.post('https://alumni-connect-sigma.vercel.app/student-api/new-discussion',diss)
     }
     else{
-        res=await axiosWithToken.post('http://localhost:4000/alumni-api/new-discussion',diss)
+        res=await axiosWithToken.post('https://alumni-connect-sigma.vercel.app/alumni-api/new-discussion',diss)
     }
      console.log(res)
      if(res.data.message==='new discussion created'){

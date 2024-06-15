@@ -3,7 +3,7 @@ import axios from 'axios'
 export const studentAlumniLoginThunk=createAsyncThunk('student-alumni-login',async(userCredObj,thunkApi)=>{
     try{
     if(userCredObj.userType==='student'){
-        const dbRes = await axios.post('http://localhost:4000/student-api/login',userCredObj)
+        const dbRes = await axios.post('https://alumni-connect-sigma.vercel.app/student-api/login',userCredObj)
         if(dbRes.data.message==='Login success'){
             // store token in local or session storage
             localStorage.setItem('token',dbRes.data.token)
@@ -15,7 +15,7 @@ export const studentAlumniLoginThunk=createAsyncThunk('student-alumni-login',asy
         }
     }
     if(userCredObj.userType==='alumni'){
-        const dbRes = await axios.post('http://localhost:4000/alumni-api/login',userCredObj)
+        const dbRes = await axios.post('https://alumni-connect-sigma.vercel.app/alumni-api/login',userCredObj)
         if(dbRes.data.message==='login success'){
             localStorage.setItem('token',dbRes.data.token)
             return dbRes.data;

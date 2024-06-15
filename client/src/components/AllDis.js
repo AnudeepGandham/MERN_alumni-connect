@@ -15,10 +15,10 @@ function AllDis() {
     const getArt= async ()=>{
         let res;
         if(currentUser.userType==='student'){
-        res = await axiosWithToken.get(`http://localhost:4000/student-api/discussions`);
+        res = await axiosWithToken.get(`https://alumni-connect-sigma.vercel.app/student-api/discussions`);
         }
         else{
-            res = await axiosWithToken.get(`http://localhost:4000/alumni-api/discussions`);
+            res = await axiosWithToken.get(`https://alumni-connect-sigma.vercel.app/alumni-api/discussions`);
         }
         setDis(res.data.payload)
         console.log(dis)

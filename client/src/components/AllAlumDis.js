@@ -26,10 +26,10 @@ function AllAlumDis() {
         let res;
         console.log(replyObj)
         if(currentUser.userType==='student'){
-            res = await axiosWithToken.post(`http://localhost:4000/student-api/comment-reply/${state.disId}/reply/${threadId}`,replyObj);
+            res = await axiosWithToken.post(`https://alumni-connect-sigma.vercel.app/student-api/comment-reply/${state.disId}/reply/${threadId}`,replyObj);
 }
         else{
-        res = await axiosWithToken.post(`http://localhost:4000/alumni-api/comment-reply/${state.disId}/reply/${threadId}`,replyObj);
+        res = await axiosWithToken.post(`https://alumni-connect-sigma.vercel.app/alumni-api/comment-reply/${state.disId}/reply/${threadId}`,replyObj);
 }
         if(res.data.message==='reply posted'){
             setComment("Reply Posted");
@@ -41,10 +41,10 @@ function AllAlumDis() {
         threadObj.replies=[]
         let res;
         if(currentUser.userType==='student'){
-            res = await axiosWithToken.post(`http://localhost:4000/student-api/comment/${state.disId}`,threadObj);
+            res = await axiosWithToken.post(`https://alumni-connect-sigma.vercel.app/student-api/comment/${state.disId}`,threadObj);
 }
         else{
-        res = await axiosWithToken.post(`http://localhost:4000/alumni-api/comment/${state.disId}`,threadObj);
+        res = await axiosWithToken.post(`https://alumni-connect-sigma.vercel.app/alumni-api/comment/${state.disId}`,threadObj);
 }
         if(res.data.message==='Comment Posted'){
             setComment(res.data.message);

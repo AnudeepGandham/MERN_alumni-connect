@@ -10,7 +10,7 @@ function AllAlumni() {
         headers:{Authorization: `Bearer ${token}`}
     })
     const getAl= async ()=>{
-        let res = await axiosWithToken.get('http://localhost:4000/student-api/alumni');
+        let res = await axiosWithToken.get('https://alumni-connect-sigma.vercel.app/student-api/alumni');
         setAlumni(res.data.payload)
         setFilteredAlumni(res.data.payload)
         console.log(alumni)

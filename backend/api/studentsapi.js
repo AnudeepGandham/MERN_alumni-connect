@@ -1,7 +1,7 @@
 const exp = require('express')
 const studentapp = exp.Router();
 const bcryptjs = require("bcryptjs");
-const verifyToken = require('../Middlewares/verifytoken')
+const verifyToken = require('../Middlewares/verifyToken')
 const expressAsyncHandler = require("express-async-handler");
 const jwt = require("jsonwebtoken");
 

@@ -5,9 +5,9 @@ require('dotenv').config()
 const mc = require('mongodb').MongoClient;
 const path = require('path')
 
-app.use(cors());
-app.use(exp.json())
 
+app.use(exp.json())
+app.use(cors());
 
 mc.connect(process.env.DB_URL)
 .then(client=>{
@@ -25,7 +25,7 @@ mc.connect(process.env.DB_URL)
 .catch(err=>{
     console.log("Error in db connection")
 })
-// app.use(exp.static(path.join(__dirname,'./client/build')))
+app.use(exp.static(path.join(__dirname,'../client/build')))
 
 
 const alumniApp = require('./api/alumniapi')
@@ -34,13 +34,9 @@ const studentapp = require('./api/studentsapi')
 
 app.use('/alumni-api',alumniApp)
 app.use('/student-api',studentapp)
-// app.use((req,res,next)=>{
-//     res.sendFile(path.join(__dirname,'./client/build/index.html'))
-// })
-app.get("/", (req, res) => {
-    app.use(express.static(path.resolve(__dirname, "client", "build")));
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-  });
+app.use((req,res,next)=>{
+    res.sendFile(path.join(__dirname,'../client/build/index.html'))
+})
 app.use((err,req,res,next)=>{
     res.send({message:"error",payload:err.message});
 })

@@ -11,7 +11,7 @@ app.use(cors());
 
 mc.connect(process.env.DB_URL)
 .then(client=>{
-    const alumnidb = client.db('alumniconnect')
+    const alumnidb = client.db()
     const studentscollection = alumnidb.collection('studentscollection')
     const alumnicollection = alumnidb.collection('alumnicollection')
     const discollection = alumnidb.collection('discussionscollection')

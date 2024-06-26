@@ -24,6 +24,7 @@ mc.connect(process.env.DB_URL)
 })
 .catch(err=>{
     console.log("Error in db connection")
+    console.log(err);
 })
 app.use(exp.static(path.join(__dirname,'../client/build')))
 

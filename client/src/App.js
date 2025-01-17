@@ -19,6 +19,7 @@ import ErrorElement from './components/ErrorElement';
 import EachAlumni from './components/EachAlumni';
 import MainEvent from './components/MainEvent';
 function App() {
+  //app//
   let router = createBrowserRouter([
     {
       path:'',
